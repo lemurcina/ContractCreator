@@ -1,0 +1,67 @@
+// Header bar
+.theme-container .navbar
+    display flex
+    align-items center
+    padding 1.5rem
+    height $headerHeight
+    box-shadow 0px 5px 10px rgba($shadowBgColor, 0.1)
+    border-bottom 0
+
+    // Mobile menu button
+    .sidebar-button
+        position static
+        margin-right 1.5rem
+        margin-left -0.375rem
+        @media (max-width: $size-sm)
+            margin-right 1rem
+            margin-left -0.6875rem
+
+    .home-link
+        display inline-flex
+        .logo
+            height 1.625rem
+        .site-name.can-hide
+            display none
+
+    // Nav links
+    .links
+        display inline-flex
+        top 0
+        bottom 0
+        @media (max-width: $size-sm)
+            padding-left 0
+        .search-box
+            display flex
+            align-items center
+            margin-right 1.5rem
+            @media (max-width: $size-sm)
+                margin-right 0
+
+            .search-query
+                border-radius 6px
+            input
+                background-image url('/img/search.svg')
+                &:not(:focus)
+                    border-color $borderColor
+                    @media (max-width: $size-md)
+                        border-color transparent
+
+        .nav-links
+            display flex
+            align-items center
+            @media (max-width: $size-sm)
+                display none
+
+            .nav-item
+                .nav-link.external
+                    color $accentColor
+                    font-size 1rem
+                    font-weight 600
+                    & span > svg
+                        display none
+
+                &:last-child .nav-link.external
+                    background-color $accentColor
+                    color white
+                    border-radius 6px
+                    padding 0.375rem 2rem

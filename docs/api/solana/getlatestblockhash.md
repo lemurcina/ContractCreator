@@ -1,0 +1,62 @@
+---
+meta:
+  - name: description
+    content: getLatestBlockhash JSON-RPC method for the Solana API available with examples in Solana web3.js, Solana.py, and cURL.
+  - name: keywords
+    content: json rpc methods curl api solana.py solana web3.js javascript python solana
+---
+
+# getLatestBlockhash
+
+Solana API method that returns the latest blockhash.
+
+**Parameters:**
+
+* `<object>` — (optional) the configuration object containing the following fields:
+    * `commitment: <string>` — (optional) the commitment used for retrieving blockhash.
+    * `minContextSlot: <number>` — (optional) the minimum slot that the request can be evaluated at.
+
+**Returns:**
+
+* `RpcResponse <object>` — the RPC response JSON object with value field set to a JSON object including:
+  * `blockhash: <string>` — a hash as a base58 encoded string.
+  * `lastValidBlockHeight: <u64>` — the last block height at which the blockhash will be valid.
+
+**Example:**
+
+<CodeSwitcher :languages="{js:'Solana web3.js', py:'Solana.py', cr:'cURL'}">
+<template v-slot:js>
+
+``` js
+import { Connection } from "@solana/web3.js";
+
+const nodeUrl = "CHAINSTACK_NODE_URL"
+const connect = new Connection(nodeUrl);
+
+(async () => {  
+  console.log(await connect.getLatestBlockhash());
+})();
+```
+
+</template>
+<template v-slot:py>
+
+``` py
+from solana.rpc.api import Client
+
+web3 = Client("CHAINSTACK_NODE_URL")
+
+print(web3.get_latest_blockhash())
+```
+
+</template>
+<template v-slot:cr>
+
+``` sh
+curl -X POST "CHAINSTACK_NODE_URL" \
+  -H "Content-Type: application/json" \
+  --data '{"jsonrpc":"2.0","id":1, "method":"getLatestBlockhash", "params" : []}'
+```
+
+</template>
+</CodeSwitcher>
