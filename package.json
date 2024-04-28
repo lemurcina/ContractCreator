@@ -1,0 +1,24 @@
+{
+  "name": "chainstack-docs",
+  "version": "1.2.1",
+  "description": "Chainstack documentation",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "build": "vuepress build docs",
+    "clean": "rm -rf docs/.vuepress/dist",
+    "dev": "vuepress dev docs"
+  },
+  "devDependencies": {
+    "markdown-it-container": "^2.0.0",
+    "vuepress": "^1.2.0"
+  },
+  "dependencies": {
+    "@limdongjin/vuepress-plugin-simple-seo": "^1.0.4-alpha.5",
+    "clean": "^4.0.2",
+    "esm": "^3.2.25",
+    "vuepress-plugin-clean-urls": "^1.1.0",
+    "vuepress-plugin-google-tag-manager": "^0.0.3",
+    "vuepress-plugin-sitemap": "^2.3.1"
+  }
+}
